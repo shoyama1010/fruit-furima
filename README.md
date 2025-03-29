@@ -29,6 +29,7 @@ http://localhost
 
 ・html
 ・css
+・bootstrap.min.css使用
 
 ・mysql 8.0.26
 
