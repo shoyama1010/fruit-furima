@@ -98,7 +98,7 @@ MAIL_FROM_NAME="laravel"
 
 docker-compose exec php bash
 
-でPHPコンテナにログインし(ログインしたままであれば上記コマンドは実行しなくて良いです。)
+上記コマンドにて、PHPコンテナにログインし
 
 php artisan migrate
 
