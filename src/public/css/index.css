@@ -1,25 +1,3 @@
-/* 商品一覧用のスタイル */
-/* .products-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-} */
-
-/* .products-header form {
-    display: flex;
-    gap: 0.5rem;
-} */
-
-/* === ページ全体のレイアウト === */
-/* .products-page-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 40px;
-
-} */
 
 /* === 左カラム：検索フォーム === */
 .search-sidebar {
@@ -107,4 +85,5 @@
 .pagination {
     justify-content: center;
 }
+
 

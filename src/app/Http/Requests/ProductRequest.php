@@ -26,9 +26,9 @@ class ProductRequest extends FormRequest
         // return [
         $rules = [
             'name' => 'required|string|max:255',
-            'price' => 'required|integer|min:0',
+            'price' => 'required|integer|between:0,10000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description' => 'required|string',
+            'description' => 'required|string|max:120',
             'seasons' => 'required|array',
             'seasons.*' => 'exists:seasons,id',
         ];
@@ -64,7 +64,7 @@ class ProductRequest extends FormRequest
             'description.required' => '商品説明を入力してください',
             'description.max' => '説明文が120文字以内である必要があります',
             'seasons.required' => '季節を選択してください',
-            'image.required' => '商品画像をアップロードしてください',
+            'image.required' => '商品画像を登録してください',
             'image.image' => '画像ファイルをアップロードしてください',
             'image.mimes' => '「.png」もしくは「.jpeg」形式でアップロードしてください',
         ];
