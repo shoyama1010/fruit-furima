@@ -58,7 +58,7 @@ docker-compose up -d --build
 ## 3 Laravelパッケージをインストールする
 
 docker-compose exec php bash
-でPHPコンテナにログインし
+で,PHPコンテナにログインし
 
 composer install
 
