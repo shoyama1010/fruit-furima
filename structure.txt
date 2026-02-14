@@ -1,0 +1,30 @@
+.
+├── README.md
+├── docker
+│   ├── mysql
+│   ├── nginx
+│   └── php
+├── docker-compose.yml
+├── src
+│   ├── README.md
+│   ├── app
+│   ├── artisan
+│   ├── bootstrap
+│   ├── composer.json
+│   ├── composer.lock
+│   ├── config
+│   ├── database
+│   ├── package.json
+│   ├── phpunit.xml
+│   ├── public
+│   ├── resources
+│   ├── routes
+│   ├── server.php
+│   ├── storage
+│   ├── structure.txt
+│   ├── tests
+│   ├── vendor
+│   └── webpack.mix.js
+└── structure.txt
+
+15 directories, 12 files
