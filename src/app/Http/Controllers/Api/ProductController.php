@@ -13,4 +13,11 @@ class ProductController extends Controller
         $products = Product::with('seasons')->get();
         return response()->json($products);
     }
+
+    public function show($id)
+    {
+        $product = Product::with('seasons')->findOrFail($id);
+        return response()->json($product);
+    }
 }
+
