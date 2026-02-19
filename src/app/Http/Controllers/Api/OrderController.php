@@ -10,24 +10,46 @@ class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::with(['user', 'product'])->where('user_id', $request->user()->id)->get();
+        $orders = Order::with(['product'])
+            ->where('user_id', $request->user()->id)
+            ->latest()
+            ->get();
         return response()->json($orders);
     }
 
     public function store(Request $request)
     {
+        if (!$request->user()) {
+            return response()->json(['message' => 'not authenticated'], 401);
+        }
+
         $validated = $request->validate([
-            // 'user_id' => 'required|integer',
             'product_id' => 'required|integer',
             'quantity' => 'required|integer|min:1',
         ]);
 
         $order = Order::create([
-            'user_id' => $request->user()->id, // ← ここが重要
+            'user_id' => $request->user()->id,
             'product_id' => $validated['product_id'],
             'quantity' => $validated['quantity'],
         ]);
 
         return response()->json($order, 201);
     }
+    // public function store(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         // 'user_id' => 'required|integer',
+    //         'product_id' => 'required|integer',
+    //         'quantity' => 'required|integer|min:1',
+    //     ]);
+
+    //     $order = Order::create([
+    //         'user_id' => $request->user()->id, // ← ここが重要
+    //         'product_id' => $validated['product_id'],
+    //         'quantity' => $validated['quantity'],
+    //     ]);
+
+    //     return response()->json($order, 201);
+    // }
 }
